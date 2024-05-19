@@ -7,42 +7,108 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="script.js" async></script>
+    <style>
+        body {
+            background-color: #e3f2fd; /* Light blue background */
+        }
+
+        .container-fluid {
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-top: 20px;
+            color: #0d6efd; /* Bootstrap primary color */
+        }
+
+        .lead {
+            color: #6c757d; /* Bootstrap secondary color */
+        }
+
+        .form-group {
+            margin-top: 20px;
+        }
+
+        .form-label {
+            color: #495057; /* Bootstrap form text color */
+        }
+
+        #answerPart {
+            margin-top: 20px;
+        }
+
+        .card {
+            border: none;
+            background-color: #f8f9fa; /* Bootstrap light color */
+        }
+
+        .card-title {
+            color: #0d6efd; /* Bootstrap primary color */
+        }
+
+        .card-text {
+            color: #212529; /* Bootstrap body color */
+        }
+
+        #previewPart {
+            margin-top: 10px;
+        }
+
+        p {
+            margin-top: 10px;
+        }
+
+        a {
+            color: #0d6efd; /* Bootstrap primary color */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
-
     <div class="container-fluid">
-        <h1>ML EfficientNet-Lite4</h1>
-        <p>ONNX Model Demonstration by mosa (Version 2.0)</p>
+        <div class="text-center">
+            <h1 class="display-4">SW7: ML EfficientNet-Lite4</h1>
+            <p class="lead">ONNX Model Demonstration by schneli3 (Version 2.0)</p>
+        </div>
 
         <form>
             <div class="form-group">
-                <label for="exampleFormControlFile1">Bitte Bild hochladen (jpeg, png)</label>
-                <input type="file" accept="image/png, image/jpeg" class="form-control-file" id="image" name="image"
+                <label for="exampleFormControlFile1" class="form-label">Bitte Bild hochladen (jpeg, png)</label>
+                <input type="file" accept="image/png, image/jpeg" class="form-control" id="image" name="image"
                     onchange="checkFiles(this.files);">
             </div>
         </form>
 
-        <div id="answerPart" style="visibility: hidden;">
-            <p><b>Answer:</b>
-            <div id="answer"></div>
-            </p>
+        <div id="answerPart" class="mt-4" style="visibility: hidden;">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Answer:</h5>
+                    <p class="card-text" id="answer"></p>
+                </div>
+            </div>
 
-            <p id="previewPart"><b>Analyzed Image:</b>
-            <p><img id="preview" width="300" src="#" alt="preview" /></p>
-            </p>
+            <div id="previewPart" class="mt-4">
+                <h5>Analyzed Image:</h5>
+                <img id="preview" class="img-fluid" width="300" src="#" alt="preview" />
+            </div>
         </div>
 
-        <div>
-            <p>Links:<br>
-                <a href="https://github.com/onnx/models/tree/main/validated/vision/classification/efficientnet-lite4">EfficientNet-Lite4
-                    Repository</a><br>
-                <a href="https://onnx.ai/">ONNX Website</a>
-            </p>
-        </diV>
+        <div class="mt-4">
+            <p>Links:</p>
+            <ul class="list-unstyled">
+                <li><a href="https://github.com/onnx/models/tree/main/validated/vision/classification/efficientnet-lite4" target="_blank">EfficientNet-Lite4 Repository</a></li>
+                <li><a href="https://onnx.ai/" target="_blank">ONNX Website</a></li>
+            </ul>
+        </div>
     </div>
-
-
 </body>
 
 </html>
